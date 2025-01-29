@@ -1,0 +1,21 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\source\\shootertestsruntime\\private\\utilities\\shootertestsanimationtesthelper.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\shootertestsruntime\\definitions.shootertestsruntime.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\source\\shootertestsruntime\\private\\utilities\\shootertestsanimationtesthelper.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\public\\animation\\animinstanceproxy.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\public\\animation\\animtrace.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\public\\objecttrace.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\public\\tracefilter.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\objecttrace.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\public\\animation\\animattributes.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\animinstanceproxy.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

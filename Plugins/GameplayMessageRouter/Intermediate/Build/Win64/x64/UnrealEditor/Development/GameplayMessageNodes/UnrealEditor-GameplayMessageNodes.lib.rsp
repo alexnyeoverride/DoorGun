@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-GameplayMessageNodes.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\GameplayMessageNodesModule.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\K2Node_AsyncAction_ListenForGameplayMessages.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\PerModuleInline.gen.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\GameplayMessageNodes.init.gen.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageNodes\UnrealEditor-GameplayMessageNodes.lib"

@@ -1,0 +1,37 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\source\\shootercoreruntime\\private\\input\\aimassisttargetcomponent.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\shootercoreruntime\\definitions.shootercoreruntime.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\source\\shootercoreruntime\\public\\input\\aimassisttargetcomponent.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\capsulecomponent.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\gameplaytags\\classes\\gameplaytagcontainer.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\core\\public\\misc\\comparisonutility.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplaytags\\uht\\gameplaytagcontainer.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\source\\shootercoreruntime\\public\\input\\iaimassisttargetinterface.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\source\\shootercoreruntime\\public\\input\\aimassistinputmodifier.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\runtime\\gameplayabilities\\source\\gameplayabilities\\public\\scalablefloat.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\runtime\\dataregistry\\source\\dataregistry\\public\\dataregistryid.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\runtime\\dataregistry\\intermediate\\build\\win64\\unrealeditor\\inc\\dataregistry\\uht\\dataregistryid.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\runtime\\gameplayabilities\\intermediate\\build\\win64\\unrealeditor\\inc\\gameplayabilities\\uht\\scalablefloat.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\source\\lyragame\\input\\lyrainputmodifiers.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputmodifiers.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\inputactionvalue.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputactionvalue.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\inputmodifiers.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\intermediate\\build\\win64\\unrealeditor\\inc\\lyragame\\uht\\lyrainputmodifiers.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\intermediate\\build\\win64\\unrealeditor\\inc\\shootercoreruntime\\uht\\aimassistinputmodifier.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\intermediate\\build\\win64\\unrealeditor\\inc\\shootercoreruntime\\uht\\iaimassisttargetinterface.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\intermediate\\build\\win64\\unrealeditor\\inc\\shootercoreruntime\\uht\\aimassisttargetcomponent.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamefeatures\\shootercore\\intermediate\\build\\win64\\unrealeditor\\inc\\shootercoreruntime\\uht\\aimassisttargetcomponent.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

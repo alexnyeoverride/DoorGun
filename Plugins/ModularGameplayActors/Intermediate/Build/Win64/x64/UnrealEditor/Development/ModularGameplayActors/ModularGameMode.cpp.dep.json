@@ -1,0 +1,36 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\source\\modulargameplayactors\\private\\modulargamemode.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\modulargameplayactors\\definitions.modulargameplayactors.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\source\\modulargameplayactors\\public\\modulargamemode.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemode.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemode.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\intermediate\\build\\win64\\unrealeditor\\inc\\modulargameplayactors\\uht\\modulargamemode.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\source\\modulargameplayactors\\public\\modulargamestate.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamestate.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamestatebase.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamestatebase.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamestate.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\intermediate\\build\\win64\\unrealeditor\\inc\\modulargameplayactors\\uht\\modulargamestate.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\source\\modulargameplayactors\\public\\modularpawn.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\intermediate\\build\\win64\\unrealeditor\\inc\\modulargameplayactors\\uht\\modularpawn.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\source\\modulargameplayactors\\public\\modularplayercontroller.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\intermediate\\build\\win64\\unrealeditor\\inc\\modulargameplayactors\\uht\\modularplayercontroller.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\source\\modulargameplayactors\\public\\modularplayerstate.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\intermediate\\build\\win64\\unrealeditor\\inc\\modulargameplayactors\\uht\\modularplayerstate.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\modulargameplayactors\\intermediate\\build\\win64\\unrealeditor\\inc\\modulargameplayactors\\uht\\modulargamemode.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

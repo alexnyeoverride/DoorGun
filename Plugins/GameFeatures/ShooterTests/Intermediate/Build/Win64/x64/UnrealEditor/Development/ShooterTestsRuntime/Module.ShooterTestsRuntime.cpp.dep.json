@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\desktop\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\shootertestsruntime\\module.shootertestsruntime.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\desktop\\lyrastartergame\\intermediate\\build\\win64\\x64\\lyraeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\desktop\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\shootertestsruntime\\definitions.shootertestsruntime.h",
+            "c:\\users\\alex\\desktop\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\intermediate\\build\\win64\\unrealeditor\\inc\\shootertestsruntime\\uht\\shootertestsdevicepropertytester.gen.cpp",
+            "c:\\users\\alex\\desktop\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\source\\shootertestsruntime\\private\\shootertestsdevicepropertytester.h",
+            "c:\\users\\alex\\desktop\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\intermediate\\build\\win64\\unrealeditor\\inc\\shootertestsruntime\\uht\\shootertestsdevicepropertytester.generated.h",
+            "c:\\users\\alex\\desktop\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\intermediate\\build\\win64\\unrealeditor\\inc\\shootertestsruntime\\uht\\shootertestsruntime.init.gen.cpp",
+            "c:\\users\\alex\\desktop\\lyrastartergame\\plugins\\gamefeatures\\shootertests\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\shootertestsruntime\\permoduleinline.gen.cpp",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\private\\datasource\\gamesettingdatasourcedynamic.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gamesettings\\definitions.gamesettings.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\public\\datasource\\gamesettingdatasourcedynamic.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\public\\datasource\\gamesettingdatasource.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\propertypath\\public\\propertypathhelpers.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\propertypath\\public\\propertytypecompatibility.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\propertypath\\uht\\propertypathhelpers.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\commongame\\source\\private\\messaging\\commonmessagingsubsystem.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\commongame\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\commongame\\definitions.commongame.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\commongame\\source\\public\\messaging\\commonmessagingsubsystem.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\commongame\\intermediate\\build\\win64\\unrealeditor\\inc\\commongame\\uht\\commonmessagingsubsystem.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\commongame\\intermediate\\build\\win64\\unrealeditor\\inc\\commongame\\uht\\commonmessagingsubsystem.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

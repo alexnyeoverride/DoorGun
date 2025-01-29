@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\pocketworlds\\source\\private\\pocketcapture.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\pocketworlds\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pocketworlds\\definitions.pocketworlds.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\pocketworlds\\source\\public\\pocketcapture.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\pocketworlds\\intermediate\\build\\win64\\unrealeditor\\inc\\pocketworlds\\uht\\pocketcapture.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\cameracomponent.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\components\\scenecapturecomponent.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\scenecapturecomponent.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\components\\scenecapturecomponent2d.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\scenecapturecomponent2d.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\engine\\texturerendertarget2d.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\engine\\classes\\engine\\texturerendertarget.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\texturerendertarget.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\texturerendertarget2d.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\pocketworlds\\source\\public\\pocketcapturesubsystem.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\pocketworlds\\intermediate\\build\\win64\\unrealeditor\\inc\\pocketworlds\\uht\\pocketcapturesubsystem.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\pocketworlds\\intermediate\\build\\win64\\unrealeditor\\inc\\pocketworlds\\uht\\pocketcapture.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

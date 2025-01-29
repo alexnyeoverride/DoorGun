@@ -3,3 +3,5 @@
 !/Source/**/*
 !/Content/**/*
 !LyraStarterGame.uproject
+!/Plugins/**/*
+!/**/*.cs

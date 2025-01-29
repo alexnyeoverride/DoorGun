@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-LyraExtTool.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\LyraExtTool\Intermediate\Build\Win64\x64\UnrealEditor\Development\LyraExtTool\BPFunctionLibrary.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\LyraExtTool\Intermediate\Build\Win64\x64\UnrealEditor\Development\LyraExtTool\LyraExtTool.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\LyraExtTool\Intermediate\Build\Win64\x64\UnrealEditor\Development\LyraExtTool\PerModuleInline.gen.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\LyraExtTool\Intermediate\Build\Win64\x64\UnrealEditor\Development\LyraExtTool\LyraExtTool.init.gen.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\LyraExtTool\Intermediate\Build\Win64\x64\UnrealEditor\Development\LyraExtTool\UnrealEditor-LyraExtTool.lib"

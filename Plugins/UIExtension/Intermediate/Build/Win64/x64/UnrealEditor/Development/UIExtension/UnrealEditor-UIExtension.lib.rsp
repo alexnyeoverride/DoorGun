@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-UIExtension.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\UIExtension\Intermediate\Build\Win64\x64\UnrealEditor\Development\UIExtension\LogUIExtension.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\UIExtension\Intermediate\Build\Win64\x64\UnrealEditor\Development\UIExtension\UIExtensionModule.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\UIExtension\Intermediate\Build\Win64\x64\UnrealEditor\Development\UIExtension\UIExtensionSystem.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\UIExtension\Intermediate\Build\Win64\x64\UnrealEditor\Development\UIExtension\UIExtensionPointWidget.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\UIExtension\Intermediate\Build\Win64\x64\UnrealEditor\Development\UIExtension\PerModuleInline.gen.cpp.obj"
+"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\UIExtension\Intermediate\Build\Win64\x64\UnrealEditor\Development\UIExtension\UIExtension.init.gen.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\UIExtension\Intermediate\Build\Win64\x64\UnrealEditor\Development\UIExtension\UnrealEditor-UIExtension.lib"

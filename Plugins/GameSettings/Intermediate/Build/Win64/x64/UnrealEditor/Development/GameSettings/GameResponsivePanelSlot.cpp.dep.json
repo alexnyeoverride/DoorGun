@@ -1,0 +1,36 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\private\\widgets\\responsive\\gameresponsivepanelslot.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gamesettings\\definitions.gamesettings.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\private\\widgets\\responsive\\gameresponsivepanelslot.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\umg\\public\\components\\panelslot.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\umg\\public\\components\\visual.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\visual.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\panelslot.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\private\\widgets\\responsive\\sgameresponsivepanel.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\intermediate\\build\\win64\\unrealeditor\\inc\\gamesettings\\uht\\gameresponsivepanelslot.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\umg\\public\\components\\widget.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\umg\\public\\binding\\states\\widgetstatebitfield.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\widgetstatebitfield.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\fieldnotification\\public\\fieldnotificationdeclaration.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\fieldnotification\\public\\ifieldnotificationclassdescriptor.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\fieldnotification\\public\\inotifyfieldvaluechanged.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\fieldnotification\\uht\\inotifyfieldvaluechanged.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\umg\\public\\components\\slatewrappertypes.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\slatewrappertypes.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\umg\\public\\slate\\widgettransform.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\widgettransform.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\umg\\public\\blueprint\\widgetnavigation.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\slatecore\\public\\types\\navigationmetadata.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\widgetnavigation.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\umg\\uht\\widget.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\intermediate\\build\\win64\\unrealeditor\\inc\\gamesettings\\uht\\gameresponsivepanelslot.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

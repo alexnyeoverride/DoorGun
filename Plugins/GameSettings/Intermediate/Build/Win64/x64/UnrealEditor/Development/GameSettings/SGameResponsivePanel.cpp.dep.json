@@ -1,0 +1,18 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\private\\widgets\\responsive\\sgameresponsivepanel.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gamesettings\\definitions.gamesettings.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesettings\\source\\private\\widgets\\responsive\\sgameresponsivepanel.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\applicationcore\\public\\hal\\platformapplicationmisc.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\applicationcore\\public\\windows\\windowsplatformapplicationmisc.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\applicationcore\\public\\genericplatform\\genericplatformapplicationmisc.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\source\\runtime\\slate\\public\\widgets\\sviewport.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

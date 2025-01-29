@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-GameplayMessageRuntime.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\alex\Desktop\LyraStarterGame\Intermediate\Build\Win64\x64\LyraEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\alex\Desktop\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Module.GameplayMessageRuntime.cpp.obj"
+"C:\Users\alex\Desktop\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\AsyncAction_ListenForGameplayMessage.cpp.obj"
+"C:\Users\alex\Desktop\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\GameplayMessageRuntime.cpp.obj"
+"C:\Users\alex\Desktop\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\GameplayMessageSubsystem.cpp.obj"
+"C:\Users\alex\Desktop\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\Default.rc2.res"
+/OUT:"C:\Users\alex\Desktop\LyraStarterGame\Plugins\GameplayMessageRouter\Intermediate\Build\Win64\x64\UnrealEditor\Development\GameplayMessageRuntime\UnrealEditor-GameplayMessageRuntime.lib"

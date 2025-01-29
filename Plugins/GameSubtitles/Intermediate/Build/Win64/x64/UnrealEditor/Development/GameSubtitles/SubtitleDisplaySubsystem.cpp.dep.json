@@ -1,0 +1,18 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesubtitles\\source\\private\\subtitledisplaysubsystem.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\alex\\riderprojects\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesubtitles\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gamesubtitles\\definitions.gamesubtitles.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesubtitles\\source\\public\\subtitledisplaysubsystem.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesubtitles\\source\\public\\subtitledisplayoptions.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesubtitles\\intermediate\\build\\win64\\unrealeditor\\inc\\gamesubtitles\\uht\\subtitledisplayoptions.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesubtitles\\intermediate\\build\\win64\\unrealeditor\\inc\\gamesubtitles\\uht\\subtitledisplaysubsystem.generated.h",
+            "c:\\users\\alex\\riderprojects\\unrealengine\\samples\\games\\lyrastartergame\\plugins\\gamesubtitles\\intermediate\\build\\win64\\unrealeditor\\inc\\gamesubtitles\\uht\\subtitledisplaysubsystem.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
