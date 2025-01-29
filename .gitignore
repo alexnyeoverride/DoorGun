@@ -1,0 +1,5 @@
+/LyraStarterGame.uproject
+
+!/Source/**/*
+!/Content/**/*
+!LyraStarterGame.uproject
