@@ -5,6 +5,7 @@
 
 struct DOORGUNSHADERS_API FSchroedingerDispatchParams
 {
+	// TODO
 };
 
 class DOORGUNSHADERS_API FSchroedingerInterface
