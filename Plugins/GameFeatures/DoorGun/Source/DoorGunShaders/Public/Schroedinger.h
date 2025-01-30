@@ -8,12 +8,6 @@
 
 struct DOORGUNSHADERS_API FSchroedingerDispatchParams
 {
-	int X;
-	int Y;
-	int Z;
-
-	FSchroedingerDispatchParams(const int X, const int Y, const int Z)
-		: X(X), Y(Y), Z(Z) {}
 };
 
 class DOORGUNSHADERS_API FSchroedingerInterface
@@ -62,7 +56,7 @@ class DOORGUNSHADERS_API USchroedingerLibrary_AsyncExecution : public UBlueprint
  
 public:
 	virtual void Activate() override {
-		FSchroedingerDispatchParams Params(8, 8, 8);
+		FSchroedingerDispatchParams Params;
 		FSchroedingerInterface::Dispatch(Params, [this](int OutputVal) {});
 	}
 	

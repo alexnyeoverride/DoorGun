@@ -8,7 +8,7 @@
 #include "Runtime/Core/Public/Modules/ModuleManager.h"
 #include "Interfaces/IPluginManager.h"
 
-#define LOCTEXT_NAMESPACE "MyShadersModule"
+#define LOCTEXT_NAMESPACE "DoorGunShadersModule"
 
 
 void FDoorGunShadersModule::StartupModule()
