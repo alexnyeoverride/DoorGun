@@ -1,47 +1,40 @@
 #pragma once
 
-#include "CoreMinimal.h"
 #include "GenericPlatform/GenericPlatformMisc.h"
-
-struct DOORGUNSHADERS_API FSchroedingerDispatchParams
-{
-	// TODO
-};
 
 class DOORGUNSHADERS_API FSchroedingerInterface
 {
 public:
-	static void DispatchRenderThread(
-		FRHICommandListImmediate& RHICmdList,
-		FSchroedingerDispatchParams Params,
-		TFunction<void(int OutputValue)> AsyncCallback
-	);
-
-	static void DispatchGameThread(
-		FSchroedingerDispatchParams Params,
-		TFunction<void(int OutputValue)> AsyncCallback
-	)
-	{
-		ENQUEUE_RENDER_COMMAND(SceneDrawCompletion)(
-			[Params, AsyncCallback](FRHICommandListImmediate& RHICmdList)
-			{
-				DispatchRenderThread(RHICmdList, Params, AsyncCallback);					
-			}
-		);
-	}
-
 	static void Dispatch(
-		FSchroedingerDispatchParams Params,
-		TFunction<void(int OutputValue)> AsyncCallback
+		const float DeltaTime, const TArray<FTransform>& Transforms
 	)
 	{
 		if (IsInRenderingThread())
 		{
-			DispatchRenderThread(GetImmediateCommandList_ForRenderCommand(), Params, AsyncCallback);
+			Dispatch(GetImmediateCommandList_ForRenderCommand(), DeltaTime, Transforms);
 		}
 		else
 		{
-			DispatchGameThread(Params, AsyncCallback);
+			DispatchGameThread(DeltaTime, Transforms);
 		}
+	}
+
+private:
+	static void Dispatch(
+		FRHICommandListImmediate& RHICmdList,
+		const float DeltaTime, const TArray<FTransform>& Transforms
+	);
+
+	static void DispatchGameThread(
+		const float DeltaTime, const TArray<FTransform>& Transforms
+	)
+	{
+		// TODO: SceneDrawCompletion is sus.  The portal should be part of the scene draw.
+		ENQUEUE_RENDER_COMMAND(SceneDrawCompletion)(
+			[DeltaTime, Transforms](FRHICommandListImmediate& RHICmdList)
+			{
+				Dispatch(RHICmdList, DeltaTime, Transforms);					
+			}
+		);
 	}
 };
