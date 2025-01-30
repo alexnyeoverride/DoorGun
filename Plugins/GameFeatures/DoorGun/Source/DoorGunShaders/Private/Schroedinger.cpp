@@ -1,11 +1,7 @@
-#include "Schroedinger.h"
 #include "DoorGunShaders/Public/Schroedinger.h"
-
-#include "PixelShaderUtils.h"
-#include "MeshPassProcessor.inl"
-#include "StaticMeshResources.h"
-#include "RenderGraphResources.h"
-#include "GlobalShader.h"
+#include "RenderGraphBuilder.h"
+#include "RenderGraphEvent.h"
+#include "ShaderParameterStruct.h"
 
 DECLARE_STATS_GROUP(TEXT("Schroedinger"), STATGROUP_Schroedinger, STATCAT_Advanced);
 DECLARE_CYCLE_STAT(TEXT("Schroedinger Execute"), STAT_Schroedinger_Execute, STATGROUP_Schroedinger);
@@ -19,22 +15,12 @@ public:
 
 	// TODO
 	BEGIN_SHADER_PARAMETER_STRUCT(FParameters, )
-		SHADER_PARAMETER_RDG_BUFFER_SRV(Buffer<int>, Input)
-		SHADER_PARAMETER_RDG_BUFFER_UAV(RWBuffer<int>, Output)
+		SHADER_PARAMETER_RDG_BUFFER_SRV(Buffer<float>, DeltaTime)
+		SHADER_PARAMETER_RDG_BUFFER_UAV(RWBuffer<FMatrix>, SharedTransforms)
 	END_SHADER_PARAMETER_STRUCT()
-
-public:
-	static bool ShouldCompilePermutation(const FGlobalShaderPermutationParameters& Parameters)
-	{
-		return true;
-	}
-
-	static void ModifyCompilationEnvironment(const FGlobalShaderPermutationParameters& Parameters, FShaderCompilerEnvironment& OutEnvironment)
-	{
-		FGlobalShader::ModifyCompilationEnvironment(Parameters, OutEnvironment);
-		const FPermutationDomain PermutationVector(Parameters.PermutationId);
-	}
 };
+
+// TODO vertex and pixel shaders
 
 IMPLEMENT_GLOBAL_SHADER(FSchroedinger, "/DoorGunShadersShaders/Schroedinger.usf", "Schroedinger", SF_Compute);
 
@@ -46,8 +32,8 @@ void FSchroedingerInterface::DispatchRenderThread(FRHICommandListImmediate& RHIC
 	RDG_EVENT_SCOPE(GraphBuilder, "Schroedinger");
 	RDG_GPU_STAT_SCOPE(GraphBuilder, Schroedinger);
 
-	typename FSchroedinger::FPermutationDomain PermutationVector;
-	TShaderMapRef<FSchroedinger> ComputeShader(GetGlobalShaderMap(GMaxRHIFeatureLevel), PermutationVector);
+	const FSchroedinger::FPermutationDomain PermutationVector;
+	const auto ComputeShader = TShaderMapRef<FSchroedinger>(GetGlobalShaderMap(GMaxRHIFeatureLevel), PermutationVector);
 
 	if (ComputeShader.IsValid())
 	{

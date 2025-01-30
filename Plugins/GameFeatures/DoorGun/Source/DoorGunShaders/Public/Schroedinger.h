@@ -2,9 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "GenericPlatform/GenericPlatformMisc.h"
-#include "Kismet/BlueprintAsyncActionBase.h"
-
-#include "Schroedinger.generated.h"
 
 struct DOORGUNSHADERS_API FSchroedingerDispatchParams
 {
@@ -45,25 +42,5 @@ public:
 		{
 			DispatchGameThread(Params, AsyncCallback);
 		}
-	}
-};
-
-
-UCLASS()
-class DOORGUNSHADERS_API USchroedingerLibrary_AsyncExecution : public UBlueprintAsyncActionBase
-{
-		GENERATED_BODY()
- 
-public:
-	virtual void Activate() override {
-		FSchroedingerDispatchParams Params;
-		FSchroedingerInterface::Dispatch(Params, [this](int OutputVal) {});
-	}
-	
-	static USchroedingerLibrary_AsyncExecution* ExecuteBaseComputeShader(UObject* WorldContextObject)
-	{
-		USchroedingerLibrary_AsyncExecution* Action = NewObject<USchroedingerLibrary_AsyncExecution>();
-		Action->RegisterWithGameInstance(WorldContextObject);
-		return Action;
 	}
 };
