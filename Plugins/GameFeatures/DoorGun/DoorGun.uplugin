@@ -20,6 +20,11 @@
 			"Name": "DoorGunRuntime",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "DoorGunShaders",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit"
 		}
 	],
 	"ExplicitlyLoaded": true,
