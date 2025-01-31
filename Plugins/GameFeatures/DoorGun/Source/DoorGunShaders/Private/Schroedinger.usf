@@ -5,9 +5,6 @@ RWTexture3D<float2> Pong;
 bool PingPong;
 
 RWStructuredBuffer<float4x4> InputTransforms;
-int NumTransforms; // TODO: not needed?
-
-RWStructuredBuffer<float3> TriangleList;
 
 [numthreads(8, 8, 8)]
 void InitParticleSystem(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV_GroupID)
@@ -81,17 +78,72 @@ void Schroedinger(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV_Group
 
 	float2 Laplacian = ComputeLaplacian(Id, ReadTexture);
 	
-	// TODO? coulomb potential term
-	
 	// Simplified hamiltonian with hbar and mass == 1.
 	// The imaginary and real terms swap at each time-evolution.
 	float2 Hamiltonian = float2(
 		-Laplacian.y / 2,
-		Laplacian.x / 2 // TODO? + Potential
+		Laplacian.x / 2
 	);
 
 	WriteTexture[Id] = ReadTexture[Id] + Hamiltonian * DeltaTime;
+}
 
-	// TODO the vertex building.  Create a tetrahedron centered at each point.
-	//		Place it into TriangleList
+// TODO check over
+[numthreads(8, 8, 8)]
+void GenerateTetrahedra(uint3 ThreadId : SV_DispatchThreadID)
+{
+	uint3 Id = uint3(8, 8, 8) * GroupId + ThreadId;
+    
+	// Get wavefunction value and compute probability
+	RWTexture3D<COMPLEX> ReadTexture = PingPong ? Pong : Ping;
+	COMPLEX WaveFunction = ReadTexture[Id];
+	float Probability = dot(WaveFunction, WaveFunction);
+    
+	if (Probability < 0.01)
+	{
+		return;
+	}
+    
+	// Convert grid position to compute space coordinates
+	float3 Center = float3(Id);
+	float Scale = sqrt(Probability); // Scale vertices by sqrt of probability
+    
+	// Golden ratio for regular tetrahedron vertices
+	static const float Phi = 1.618033988749895f;
+	static const float3 TetrahedronVerts[4] = 
+	{
+		float3(Phi, 1.0f, 0.0f),
+		float3(-1.0f, Phi, 0.0f),
+		float3(0.0f, -1.0f, Phi),
+		float3(0.0f, -1.0f, -Phi)
+	};
+    
+	// Calculate base index for this tetrahedron in output buffer
+	uint3 Sizes;
+	Ping.GetDimensions(Sizes.x, Sizes.y, Sizes.z);
+	uint BaseIndex = (Id.x + Id.y * Sizes.x + Id.z * Sizes.x * Sizes.y) * VERTICES_PER_TETRAHEDRON;
+    
+	// Generate the 4 triangles (12 vertices total)
+	// Each set of 3 indices forms a triangle on the tetrahedron
+	static const uint TriangleIndices[12] = 
+	{
+		0, 1, 2,  // Face 1
+		0, 2, 3,  // Face 2
+		0, 3, 1,  // Face 3
+		1, 3, 2   // Face 4
+	};
+    
+	// Write all vertices to the output buffer
+	[unroll]
+	for (uint i = 0; i < VERTICES_PER_TETRAHEDRON; i++)
+	{
+		// Get the tetrahedron vertex for this triangle vertex
+		float3 Vertex = TetrahedronVerts[TriangleIndices[i]];
+        
+		// Scale, normalize and position the vertex
+		Vertex = Center + Scale * normalize(Vertex);
+        
+		// Write to output buffer
+		TriangleList[BaseIndex + i] = Vertex;
+	}
 }

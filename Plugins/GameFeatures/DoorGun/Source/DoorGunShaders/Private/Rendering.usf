@@ -2,8 +2,8 @@
 
 float SignedDistanceTorus(float3 p)
 {
-	float planar_dist = length(float2(p.x, p.z)) - R;
-	return length(float2(planar_dist, p.y)) - r;
+	float planar_dist = length(float2(p.x, p.z)) - GMajor_Radius;
+	return length(float2(planar_dist, p.y)) - GMinor_Radius;
 }
 
 
