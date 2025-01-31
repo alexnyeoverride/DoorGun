@@ -7,7 +7,7 @@ void FDoorGunShadersModule::StartupModule()
 	// Maps virtual shader source directory to the plugin's actual shader directory.
 	FString PluginShaderDir = FPaths::Combine(IPluginManager::Get().FindPlugin(
 		TEXT("DoorGun"))->GetBaseDir(),
-		TEXT("DoorGunShaders/Private")
+		TEXT("Source/DoorGunShaders/Private")
 	);
 	AddShaderSourceDirectoryMapping(TEXT("/DoorGunShadersShaders"), PluginShaderDir);
 }
