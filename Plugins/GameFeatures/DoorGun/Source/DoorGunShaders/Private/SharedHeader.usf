@@ -1,0 +1,13 @@
+#define PI 3.14159265358979323846
+#define GRID_SIDE_LENGTH 32
+#define GRID_HEIGHT 512
+
+static const float GMajor_Radius = 100.0; // cm
+static const float GMinor_Radius = 10.0; // cm
+
+#define COMPLEX float2
+
+cbuffer Spacetime
+{
+	float DeltaTime;
+}

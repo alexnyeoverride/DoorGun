@@ -1,0 +1,97 @@
+#include "SharedHeader.usf"
+
+RWTexture3D<float2> Ping;
+RWTexture3D<float2> Pong;
+bool PingPong;
+
+RWStructuredBuffer<float4x4> InputTransforms;
+int NumTransforms; // TODO: not needed?
+
+RWStructuredBuffer<float3> TriangleList;
+
+[numthreads(8, 8, 8)]
+void InitParticleSystem(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV_GroupID)
+{
+	uint3 Id = uint3(8, 8, 8) * GroupId + ThreadId;
+	
+	uint NumParticles = 10;
+	float2 WaveFunction = float2(0.0, 0.0);
+
+	uint3 Sizes;
+	Ping.GetDimensions(Sizes.x, Sizes.y, Sizes.z);
+
+	for (int i = 0; i < NumParticles; i++)
+	{
+		float3 ParticlePos = float3(
+			pow(7, 11 + i % 5) % Sizes.x,
+			pow(7, 11 + i % 2) % Sizes.y,
+			pow(7, 11 + i % 3) % Sizes.z
+		);
+		
+		float3 ParticleOffset = ParticlePos - float3(Id);
+		float ParticleDistSq = dot(ParticleOffset, ParticleOffset);
+		float3 ParticleVel = ParticlePos;
+
+		float Amplitude = exp(-ParticleDistSq); // gaussian wavepackets
+		float Phase = dot(ParticleOffset, ParticleVel);
+		WaveFunction += Amplitude * float2(cos(Phase), sin(Phase));
+	}
+
+	Ping[Id] = WaveFunction;
+	Pong[Id] = WaveFunction;
+}
+
+
+// Propagates energy from neighboring cells, while conserving net energy in the system.
+float2 ComputeLaplacian(uint3 GridPos, RWTexture3D<COMPLEX> Psi)
+{
+	COMPLEX Center = Psi.Load(GridPos);
+	COMPLEX Laplacian = -6 * Center;
+
+	uint3 Sizes;
+	Ping.GetDimensions(Sizes.x, Sizes.y, Sizes.z);
+
+	uint ZPlus = (GridPos.z + 1) % Sizes.z;
+	// Add the side length before modulating so it's always a non-negative index.
+	uint ZMinus = (GridPos.z + Sizes.z - 1) % Sizes.z;
+	Laplacian += Psi.Load(uint3(GridPos.x, GridPos.y, ZPlus));
+	Laplacian += Psi.Load(uint3(GridPos.x, GridPos.y, ZMinus));
+
+	uint YPlus = (GridPos.y + 1) % Sizes.y;
+	uint YMinus = (GridPos.y + Sizes.y - 1) % Sizes.y;
+	Laplacian += Psi.Load(uint3(GridPos.x, YPlus, GridPos.z));
+	Laplacian += Psi.Load(uint3(GridPos.x, YMinus, GridPos.z));
+
+	uint XPlus = (GridPos.x + 1) % Sizes.x;
+	uint XMinus = (GridPos.x + Sizes.x - 1) % Sizes.x;
+	Laplacian += Psi.Load(uint3(XPlus, GridPos.y, GridPos.z));
+	Laplacian += Psi.Load(uint3(XMinus, GridPos.y, GridPos.z));
+
+	return Laplacian;
+}
+
+[numthreads(8, 8, 8)]
+void Schroedinger(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV_GroupID)
+{
+	uint3 Id = uint3(8, 8, 8) * GroupId + ThreadId;
+
+	RWTexture3D<COMPLEX> ReadTexture = PingPong ? Pong : Ping;
+	RWTexture3D<COMPLEX> WriteTexture = PingPong ? Ping : Pong;
+	PingPong = !PingPong;
+
+	float2 Laplacian = ComputeLaplacian(Id, ReadTexture);
+	
+	// TODO? coulomb potential term
+	
+	// Simplified hamiltonian with hbar and mass == 1.
+	// The imaginary and real terms swap at each time-evolution.
+	float2 Hamiltonian = float2(
+		-Laplacian.y / 2,
+		Laplacian.x / 2 // TODO? + Potential
+	);
+
+	WriteTexture[Id] = ReadTexture[Id] + Hamiltonian * DeltaTime;
+
+	// TODO the vertex building.  Create a tetrahedron centered at each point.
+	//		Place it into TriangleList
+}

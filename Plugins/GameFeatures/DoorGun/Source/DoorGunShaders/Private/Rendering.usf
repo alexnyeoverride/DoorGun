@@ -1,0 +1,47 @@
+#include "SharedHeader.usf"
+
+float SignedDistanceTorus(float3 p)
+{
+	float planar_dist = length(float2(p.x, p.z)) - R;
+	return length(float2(planar_dist, p.y)) - r;
+}
+
+
+// Convert quantum coordinates to volumetric torus space
+float3 QuantumToTorusVolume(float3 qPos) {
+    // Map x,y to cross-section position (-1 to 1)
+    float2 crossSection = float2(
+        (qPos.x / GRID_WIDTH) * 2.0 - 1.0,
+        (qPos.y / GRID_HEIGHT) * 2.0 - 1.0
+    );
+    
+    // Map z to angle around major radius (0 to 2π)
+    float theta = (qPos.z / GRID_LENGTH) * 2.0 * PI;
+    
+    // Calculate center point of the circular cross-section, lying on the circumference of the major circle.
+    float3 crossSectionCenter = float3(
+        MAJOR_RADIUS * cos(theta),
+        0,
+        MAJOR_RADIUS * sin(theta)
+    );
+    
+    // Calculate final position by offsetting from cross-section center
+    return float3(
+        crossSectionCenter.x + crossSection.x * MINOR_RADIUS * cos(theta),
+        crossSection.y * MINOR_RADIUS,
+        crossSectionCenter.z + crossSection.x * MINOR_RADIUS * sin(theta)
+    );
+}
+
+
+void Render(uint3 id : SV_DispatchThreadID, RWTexture3D<float4> output, RWTexture3D<float2> psi) {
+    float3 qPos = float3(id);
+    float2 wavefunction = psi[id];
+    float probability = dot(wavefunction, wavefunction);
+    
+    float3 torusPos = QuantumToTorusVolume(qPos);    
+    float4 worldPos = mul(quantumToWorld, float4(torusPos, 1.0));
+    worldPos.xyz += portalCenter;
+    
+    output[id] = color;
+}

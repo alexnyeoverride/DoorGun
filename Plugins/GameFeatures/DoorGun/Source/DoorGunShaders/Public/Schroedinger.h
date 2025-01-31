@@ -26,13 +26,10 @@ public:
 	SHADER_USE_PARAMETER_STRUCT(FSchroedinger, FGlobalShader);
 
 	BEGIN_SHADER_PARAMETER_STRUCT(FParameters, )
-		// TODO move to initialization shader
-		// Inputs from the CPU at initialization /////////////////////////////////
-		SHADER_PARAMETER_RDG_BUFFER_UAV(RWTexture3D<float2>, Ping)
-		SHADER_PARAMETER_RDG_BUFFER_UAV(RWTexture3D<float2>, Pong)
-	
 		// Inputs from CPU each frame ////////////////////////////////////////////
 		SHADER_PARAMETER(float, DeltaTime)
+
+		// TODO: move to vertex shader
 		// dynamic array of all portals' locations and orientations as transforms
 		SHADER_PARAMETER_RDG_BUFFER_SRV(RWBuffer<Float4x4>, InputTransforms)
 		SHADER_PARAMETER(int, NumTransforms)

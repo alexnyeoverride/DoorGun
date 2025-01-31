@@ -5,7 +5,7 @@ constexpr int16 GGrid_Side_Length = 32;
 constexpr int16 GGrid_Height = 512;
 
 
-// TODO call initialization shader from GameMode::BeginPlay and call Schroedinger from GameMode::Tick
+// TODO call initialization shader from GameMode::BeginPlay and call Schroedinger from ... somewhere in the rendering
 // TODO vertex and pixel shaders.
 
 void FSchroedingerInterface::Initialize(FRHICommandListImmediate& RHICmdList)
@@ -72,8 +72,7 @@ void FSchroedingerInterface::Dispatch(
 
 void FSchroedingerInterface::Initialize()
 {
-	// TODO: SceneDrawCompletion is sus.  The portal should be part of the scene draw.
-	ENQUEUE_RENDER_COMMAND(SceneDrawCompletion)(
+	ENQUEUE_RENDER_COMMAND(InitializeSchroedinger)(
 		[](FRHICommandListImmediate& RHICmdList)
 		{
 			Initialize(RHICmdList);					
