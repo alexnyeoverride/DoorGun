@@ -11,7 +11,7 @@ TRefCountPtr<IPooledRenderTarget> FSchroedingerInterface::PersistentPing = nullp
 TRefCountPtr<IPooledRenderTarget> FSchroedingerInterface::PersistentPong = nullptr;
 bool FSchroedingerInterface::PingPong = false;
 
-// TODO call initialization shader from GameMode::BeginPlay and call Schroedinger from ... somewhere in the rendering
+// TODO call initialization shader from GameMode::BeginPlay and call Schroedinger from ... Tick?
 // TODO vertex and pixel shaders.
 
 void FSchroedingerInterface::Initialize(FRHICommandListImmediate& RHICmdList)
@@ -28,7 +28,7 @@ void FSchroedingerInterface::Initialize(FRHICommandListImmediate& RHICmdList)
 		TexCreate_ShaderResource | TexCreate_UAV
 	);
 
-	// These are temporary FRDGTextureRefs.  Convert them to TRefCountPtr<FRHITexture> via QueueTextureExtraction.
+	// These are temporary FRDGTextureRefs.  Convert them to TRefCountPtr<IPooledRenderTarget> via QueueTextureExtraction.
 	// Then use RegisterExternalTexture each frame.
 	const auto PingRef = GraphBuilder.CreateTexture(TextureDesc, TEXT("SchroedingerPing"));
 	const auto PongRef = GraphBuilder.CreateTexture(TextureDesc, TEXT("SchroedingerPong"));

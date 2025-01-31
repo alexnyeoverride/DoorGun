@@ -1,15 +1,9 @@
+// TODO delete file
+
+// TODO FParameters struct
+RWStructuredBuffer<float4x4> InputTransforms;
+
 #define PI 3.14159265358979323846
 
 static const float GMajor_Radius = 100.0; // cm
 static const float GMinor_Radius = 10.0; // cm
-
-#define COMPLEX float2
-
-
-// TODO seek clarification of how this is linked
-RWStructuredBuffer<float3> TriangleList;
-
-cbuffer Spacetime
-{
-	float DeltaTime;
-}

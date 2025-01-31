@@ -1,5 +1,4 @@
 #include "DoorGunShaders/Public/DoorGunShaders.h"
-
 #include "SchroedingerInterface.h"
 #include "Interfaces/IPluginManager.h"
 
