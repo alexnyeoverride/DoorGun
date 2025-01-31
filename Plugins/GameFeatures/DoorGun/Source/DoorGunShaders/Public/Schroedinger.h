@@ -60,4 +60,7 @@ private:
 		FRHICommandListImmediate& RHICmdList,
 		const float DeltaTime, const TArray<FTransform>& Transforms
 	);
+
+	static FRDGTextureRef Ping;
+	static FRDGTextureRef Pong;
 };

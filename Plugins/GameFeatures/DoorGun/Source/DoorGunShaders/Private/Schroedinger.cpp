@@ -4,6 +4,9 @@
 constexpr int16 GGrid_Side_Length = 32;
 constexpr int16 GGrid_Height = 512;
 
+FRDGTextureRef FSchroedingerInterface::Ping = nullptr;
+FRDGTextureRef FSchroedingerInterface::Pong = nullptr;
+
 
 // TODO call initialization shader from GameMode::BeginPlay and call Schroedinger from ... somewhere in the rendering
 // TODO vertex and pixel shaders.
@@ -15,10 +18,37 @@ void FSchroedingerInterface::Initialize(FRHICommandListImmediate& RHICmdList)
 	const FSchroedinger::FPermutationDomain PermutationVector;
 	const auto ComputeShader = TShaderMapRef<FSchroedingerInit>(GetGlobalShaderMap(GMaxRHIFeatureLevel), PermutationVector);
 
+	const auto TextureDesc = FRDGTextureDesc::Create3D(
+		FIntVector(GGrid_Side_Length, GGrid_Side_Length, GGrid_Height),
+		PF_G32R32F, // TODO: check this
+		FClearValueBinding::Black,
+		TexCreate_ShaderResource | TexCreate_UAV
+	);
+
+	Ping = GraphBuilder.CreateTexture(TextureDesc, TEXT("SchroedingerPing"));
+	Pong = GraphBuilder.CreateTexture(TextureDesc, TEXT("SchroedingerPong"));
+
 	if (ComputeShader.IsValid())
 	{
-		// TODO init the size of the 3D buffer as 32x32x512
-		// Call the compute shader
+		const auto PassParameters = GraphBuilder.AllocParameters<FSchroedingerInit::FParameters>();
+		PassParameters->Ping = GraphBuilder.CreateUAV(Ping);
+		PassParameters->Pong = GraphBuilder.CreateUAV(Pong);
+		
+		FComputeShaderUtils::AddPass(
+			GraphBuilder,
+			RDG_EVENT_NAME("SchroedingerInit"),
+			ComputeShader,
+			PassParameters,
+			FIntVector(
+				GGrid_Side_Length / 8,
+				GGrid_Side_Length / 8,
+				GGrid_Height / 8
+			)
+		);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("SchroedingerInit is invalid"));
 	}
 
 	GraphBuilder.Execute();
@@ -62,6 +92,10 @@ void FSchroedingerInterface::Dispatch(
 			ComputeParameters,
 			FIntVector(GGrid_Side_Length / 8, GGrid_Side_Length / 8, GGrid_Height / 8)
 		);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("SchroedingerDispatch is invalid"));
 	}
 
 	// TODO const auto VertexShader =
