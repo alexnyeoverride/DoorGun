@@ -1,9 +1,0 @@
-{
-	"RemapUnityFiles": 
-	{
-		"Module.DoorGunRuntime.cpp.obj": [
-			"PerModuleInline.gen.cpp.obj",
-			"DoorGunRuntimeModule.cpp.obj"
-		]
-	}
-}

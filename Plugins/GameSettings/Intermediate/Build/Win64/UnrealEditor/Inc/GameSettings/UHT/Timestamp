@@ -1,13 +1,13 @@
-C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSetting.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingAction.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingCollection.h
+C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSetting.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingFilterState.h
-C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingRegistry.h
-C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingValue.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingValueDiscrete.h
+C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingRegistry.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingValueScalar.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingValueDiscreteDynamic.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingValueScalarDynamic.h
+C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\GameSettingValue.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\Widgets\GameSettingDetailExtension.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\Widgets\GameSettingDetailView.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\Widgets\GameSettingListEntry.h
@@ -19,5 +19,5 @@ C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\G
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\Widgets\Misc\GameSettingPressAnyKey.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\Widgets\Misc\GameSettingRotator.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Public\Widgets\Misc\KeyAlreadyBoundWarning.h
-C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Private\Widgets\Responsive\GameResponsivePanel.h
 C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Private\Widgets\Responsive\GameResponsivePanelSlot.h
+C:\Users\alex\RiderProjects\UnrealEngine\Samples\Games\LyraStarterGame\Plugins\GameSettings\Source\Private\Widgets\Responsive\GameResponsivePanel.h

@@ -1,11 +1,13 @@
 #include "DoorGunShaders/Public/DoorGunShaders.h"
+
+#include "SchroedingerInterface.h"
 #include "Interfaces/IPluginManager.h"
 
 
 void FDoorGunShadersModule::StartupModule()
 {
 	// Maps virtual shader source directory to the plugin's actual shader directory.
-	FString PluginShaderDir = FPaths::Combine(IPluginManager::Get().FindPlugin(
+	const auto PluginShaderDir = FPaths::Combine(IPluginManager::Get().FindPlugin(
 		TEXT("DoorGun"))->GetBaseDir(),
 		TEXT("Source/DoorGunShaders/Private")
 	);
@@ -14,6 +16,7 @@ void FDoorGunShadersModule::StartupModule()
 
 void FDoorGunShadersModule::ShutdownModule()
 {
+	FSchroedingerInterface::CleanUp();
 }
 
 

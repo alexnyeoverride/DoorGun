@@ -1,21 +1,22 @@
 #include "SharedHeader.usf"
 
-RWTexture3D<float2> Ping;
-RWTexture3D<float2> Pong;
-bool PingPong;
+struct FParameters
+{
+	float DeltaTime;
+	RWTexture3D<float2> ReadTexture;
+	RWTexture3D<float2> WriteTexture;
+};
 
 RWStructuredBuffer<float4x4> InputTransforms;
 
 [numthreads(8, 8, 8)]
-void InitParticleSystem(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV_GroupID)
+void InitParticleSystem(uint3 Id : SV_DispatchThreadID, FParameters Params)
 {
-	uint3 Id = uint3(8, 8, 8) * GroupId + ThreadId;
-	
 	uint NumParticles = 10;
 	float2 WaveFunction = float2(0.0, 0.0);
 
 	uint3 Sizes;
-	Ping.GetDimensions(Sizes.x, Sizes.y, Sizes.z);
+	Params.WriteTexture.GetDimensions(Sizes.x, Sizes.y, Sizes.z);
 
 	for (int i = 0; i < NumParticles; i++)
 	{
@@ -34,49 +35,46 @@ void InitParticleSystem(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV
 		WaveFunction += Amplitude * float2(cos(Phase), sin(Phase));
 	}
 
-	Ping[Id] = WaveFunction;
-	Pong[Id] = WaveFunction;
+	// For initialization, both should be writable
+	Params.WriteTexture[Id] = WaveFunction;
 }
 
 
 // Propagates energy from neighboring cells, while conserving net energy in the system.
-float2 ComputeLaplacian(uint3 GridPos, RWTexture3D<COMPLEX> Psi)
+float2 ComputeLaplacian(uint3 GridPos)
 {
-	COMPLEX Center = Psi.Load(GridPos);
+	COMPLEX Center = Params.ReadTexture.Load(GridPos);
 	COMPLEX Laplacian = -6 * Center;
 
 	uint3 Sizes;
-	Ping.GetDimensions(Sizes.x, Sizes.y, Sizes.z);
+	Params.ReadTexture.GetDimensions(Sizes.x, Sizes.y, Sizes.z);
 
 	uint ZPlus = (GridPos.z + 1) % Sizes.z;
 	// Add the side length before modulating so it's always a non-negative index.
 	uint ZMinus = (GridPos.z + Sizes.z - 1) % Sizes.z;
-	Laplacian += Psi.Load(uint3(GridPos.x, GridPos.y, ZPlus));
-	Laplacian += Psi.Load(uint3(GridPos.x, GridPos.y, ZMinus));
+	Laplacian += Params.ReadTexture.Load(uint3(GridPos.x, GridPos.y, ZPlus));
+	Laplacian += Params.ReadTexture.Load(uint3(GridPos.x, GridPos.y, ZMinus));
 
 	uint YPlus = (GridPos.y + 1) % Sizes.y;
 	uint YMinus = (GridPos.y + Sizes.y - 1) % Sizes.y;
-	Laplacian += Psi.Load(uint3(GridPos.x, YPlus, GridPos.z));
-	Laplacian += Psi.Load(uint3(GridPos.x, YMinus, GridPos.z));
+	Laplacian += Params.ReadTexture.Load(uint3(GridPos.x, YPlus, GridPos.z));
+	Laplacian += Params.ReadTexture.Load(uint3(GridPos.x, YMinus, GridPos.z));
 
 	uint XPlus = (GridPos.x + 1) % Sizes.x;
 	uint XMinus = (GridPos.x + Sizes.x - 1) % Sizes.x;
-	Laplacian += Psi.Load(uint3(XPlus, GridPos.y, GridPos.z));
-	Laplacian += Psi.Load(uint3(XMinus, GridPos.y, GridPos.z));
+	Laplacian += Params.ReadTexture.Load(uint3(XPlus, GridPos.y, GridPos.z));
+	Laplacian += Params.ReadTexture.Load(uint3(XMinus, GridPos.y, GridPos.z));
 
 	return Laplacian;
 }
 
 [numthreads(8, 8, 8)]
-void Schroedinger(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV_GroupID)
+void Schroedinger(
+	uint3 Id : SV_DispatchThreadID,
+	FParameters Params
+)
 {
-	uint3 Id = uint3(8, 8, 8) * GroupId + ThreadId;
-
-	RWTexture3D<COMPLEX> ReadTexture = PingPong ? Pong : Ping;
-	RWTexture3D<COMPLEX> WriteTexture = PingPong ? Ping : Pong;
-	PingPong = !PingPong;
-
-	float2 Laplacian = ComputeLaplacian(Id, ReadTexture);
+	float2 Laplacian = ComputeLaplacian(Id);
 	
 	// Simplified hamiltonian with hbar and mass == 1.
 	// The imaginary and real terms swap at each time-evolution.
@@ -85,17 +83,13 @@ void Schroedinger(uint3 ThreadId : SV_DispatchThreadID, uint3 GroupId : SV_Group
 		Laplacian.x / 2
 	);
 
-	WriteTexture[Id] = ReadTexture[Id] + Hamiltonian * DeltaTime;
+	Params.WriteTexture[Id] = Params.ReadTexture[Id] + Hamiltonian * Params.DeltaTime;
 }
 
 // TODO check over
-[numthreads(8, 8, 8)]
-void GenerateTetrahedra(uint3 ThreadId : SV_DispatchThreadID)
+void GenerateTetrahedra()
 {
-	uint3 Id = uint3(8, 8, 8) * GroupId + ThreadId;
-    
 	// Get wavefunction value and compute probability
-	RWTexture3D<COMPLEX> ReadTexture = PingPong ? Pong : Ping;
 	COMPLEX WaveFunction = ReadTexture[Id];
 	float Probability = dot(WaveFunction, WaveFunction);
     
@@ -106,17 +100,7 @@ void GenerateTetrahedra(uint3 ThreadId : SV_DispatchThreadID)
     
 	// Convert grid position to compute space coordinates
 	float3 Center = float3(Id);
-	float Scale = sqrt(Probability); // Scale vertices by sqrt of probability
-    
-	// Golden ratio for regular tetrahedron vertices
-	static const float Phi = 1.618033988749895f;
-	static const float3 TetrahedronVerts[4] = 
-	{
-		float3(Phi, 1.0f, 0.0f),
-		float3(-1.0f, Phi, 0.0f),
-		float3(0.0f, -1.0f, Phi),
-		float3(0.0f, -1.0f, -Phi)
-	};
+	float Scale = Probability;
     
 	// Calculate base index for this tetrahedron in output buffer
 	uint3 Sizes;
